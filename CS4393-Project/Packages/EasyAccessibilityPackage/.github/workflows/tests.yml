@@ -1,0 +1,30 @@
+name: Run Unity Tests
+on: [pull_request, workflow_dispatch]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+
+      - name: Run tests
+        id: runTests
+        uses: trudeaua21/unity-test-runner@main
+        env:
+            UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          projectPath: ./com.trudeaua.easyaccessibility
+          unityVersion: "2020.3.0f1"
+          testMode: all
+          coverageOptions: 'generateAdditionalMetrics;generateHtmlReport;generateBadgeReport;assemblyFilters:+trudeaua.EasyAccessibility.*,-*Tests*'
+          packageMode: true
+
+      # Upload coverage
+      - name: Upload coverage results
+        uses: actions/upload-artifact@v3
+        with:
+          name: Package Coverage results (all)
+          path: ${{ steps.runTests.outputs.coveragePath }}
+          retention-days: 1
