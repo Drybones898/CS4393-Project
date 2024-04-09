@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
 {
     public ScreenReader ScreenReader;
     [Header("Options Stuff")]
-    public TMP_Dropdown resolutionDropdown;
+    //public TMP_Dropdown resolutionDropdown;
     public GameObject optionsMenu;
     public GameObject mainMenu;
     public Button startButton;
@@ -22,9 +22,11 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         //Add listener for when the value of the Dropdown changes, to take action
+        /*
         resolutionDropdown.onValueChanged.AddListener(delegate {
             onResolutionChanged(resolutionDropdown);
         });
+        */
         startButton.onClick.AddListener(startGame);
         optionsButton.onClick.AddListener(toOptions);
         confirmButton.onClick.AddListener(toMainMenu);
@@ -35,6 +37,7 @@ public class MainMenuController : MonoBehaviour
         });
 
         fullscreenToggle.isOn = Screen.fullScreen;
+        /*
         resolutions = Screen.resolutions;
         resolutionDropdown.options = new List<TMP_Dropdown.OptionData>();
 
@@ -50,14 +53,15 @@ public class MainMenuController : MonoBehaviour
                 {
                     resolutionDropdown.value = i;
                     PlayerPrefs.SetInt("set default resolution", 1);
-                    string resolutionString2 = resolutions[resolutionDropdown.value].width + "x" + resolutions[resolutionDropdown.value].height + " " + resolutions[resolutionDropdown.value].refreshRateRatio + "Hz";
-                    ScreenReader.StaticReadText(resolutionString2);
-                    print(resolutionString2);
+                    //ScreenReader.StaticReadText(resolutionDropdown.value.ToString());
+                    //Debug.Log(resolutionDropdown.value.ToString());
+                    Debug.Log("Hello There");
                     SetResolution();
                 }
             }
         }
         resolutionDropdown.value = PlayerPrefs.GetInt("resolution");
+        */
     }
 
     // Update is called once per frame
@@ -65,16 +69,16 @@ public class MainMenuController : MonoBehaviour
     {
 
     }
-
+    /*
     public void onResolutionChanged(TMP_Dropdown change)
     {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
         PlayerPrefs.SetInt("resolution", resolutionDropdown.value);
     }
-
+    */
     void startGame()
     {
-        SceneManager.LoadScene("Placeholder");
+        SceneManager.LoadScene("SampleScene");
     }
 
     void toOptions()
@@ -93,13 +97,15 @@ public class MainMenuController : MonoBehaviour
     {
         Application.Quit();
     }
-
+    /*
     public void SetResolution()
     {
         Screen.SetResolution(resolutions[resolutionDropdown.value].width, resolutions[resolutionDropdown.value].height, Screen.fullScreen);
+        //ScreenReader.StaticReadText(resolutionDropdown.value.ToString());
+        //Debug.Log(resolutionDropdown.value.ToString());
         PlayerPrefs.SetInt("resolution", resolutionDropdown.value);
     }
-    
+    */
     public void SetFullScreen()
     {
         Screen.fullScreen = fullscreenToggle.isOn;
