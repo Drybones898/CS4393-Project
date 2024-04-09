@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f04a7669ecf89b84e9c91610a60da858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScreenReader: {fileID: 1438244424}
+  ScreenReader: {fileID: 0}
   optionsMenu: {fileID: 944165389}
   mainMenu: {fileID: 743058680}
   startButton: {fileID: 1583895024}
@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 710465995}
   - component: {fileID: 710465998}
   - component: {fileID: 710465997}
-  - component: {fileID: 710465996}
+  - component: {fileID: 710465999}
   m_Layer: 5
   m_Name: MainMenuText (TMP)
   m_TagString: Untagged
@@ -554,21 +554,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 500}
   m_SizeDelta: {x: 1920, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &710465996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 710465994}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7bcef3d3c24aeb439ffb8b5f23653f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  readFromTextObject: 0
-  readOnHover: 1
-  outputText: Placeholder Text
 --- !u!114 &710465997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +651,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710465994}
   m_CullTransparentMesh: 1
+--- !u!114 &710465999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710465994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readFromTextObject: 0
+  readOnHover: 1
+  outputText: Placeholder Text
 --- !u!1 &743058680
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +836,18 @@ PrefabInstance:
       value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 2742337997114134643, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742337997114134643, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742337997114134643, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2742337997114134643, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 148
       objectReference: {fileID: 0}
@@ -845,7 +857,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2742337997114134643, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 16
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6011687372444176239, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
       propertyPath: m_Name
@@ -854,6 +866,22 @@ PrefabInstance:
     - target: {fileID: 6011687372444176239, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149254348241672810, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1438244424}
+    - target: {fileID: 6149254348241672810, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StaticReadText
+      objectReference: {fileID: 0}
+    - target: {fileID: 8010950119734059431, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1438244424}
+    - target: {fileID: 8010950119734059431, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: StaticReadText
       objectReference: {fileID: 0}
     - target: {fileID: 8208985384112887396, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
       propertyPath: m_LocalScale.x
@@ -891,10 +919,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -15
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5421080365350584261, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+    - {fileID: 8497221249696246665, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 634150390957360618, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1733829082}
+    - targetCorrespondingSourceObject: {fileID: 5702577337881665809, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 964467146}
   m_SourcePrefab: {fileID: 100100000, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
 --- !u!224 &944165386 stripped
 RectTransform:
@@ -906,7 +942,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8010950119734059431, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
   m_PrefabInstance: {fileID: 944165385}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 964467141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -917,7 +953,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6149254348241672810, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
   m_PrefabInstance: {fileID: 944165385}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1733829080}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
@@ -1062,6 +1098,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960678929}
   m_CullTransparentMesh: 1
+--- !u!1 &964467141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5702577337881665809, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+  m_PrefabInstance: {fileID: 944165385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &964467146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964467141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553c187032ead334b84eb581e13a9bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1035546541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1192,7 @@ GameObject:
   - component: {fileID: 1072132899}
   - component: {fileID: 1072132898}
   - component: {fileID: 1072132897}
-  - component: {fileID: 1072132896}
+  - component: {fileID: 1072132901}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1147,21 +1200,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1072132896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1072132895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7bcef3d3c24aeb439ffb8b5f23653f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  readFromTextObject: 0
-  readOnHover: 1
-  outputText: Exit Game Button
 --- !u!114 &1072132897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1206,7 +1244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+      - m_Target: {fileID: 1438244424}
         m_TargetAssemblyTypeName: ScreenReader, trudeaua.EasyAccessibility.Runtime
         m_MethodName: StaticReadText
         m_Mode: 5
@@ -1276,6 +1314,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1072132901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072132895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readFromTextObject: 0
+  readOnHover: 1
+  outputText: Exit Button
 --- !u!1 &1089071374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,71 +1473,71 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: sceneEnterMessage
       value: Main Menu Screen
       objectReference: {fileID: 0}
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.size
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.data[0]
       value: 
       objectReference: {fileID: 710465994}
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1583895021}
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.data[2]
       value: 
       objectReference: {fileID: 1910843780}
-    - target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.data[3]
       value: 
       objectReference: {fileID: 1072132895}
-    - target: {fileID: 1321293217818942507, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 1321293217818942507, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_Name
       value: ScreenReader
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3045005715398927378, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+    - target: {fileID: 3045005715398927378, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
@@ -1492,10 +1545,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
 --- !u!114 &1438244424 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+  m_CorrespondingSourceObject: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
   m_PrefabInstance: {fileID: 1438244423}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1516,7 +1569,7 @@ GameObject:
   - component: {fileID: 1583895026}
   - component: {fileID: 1583895025}
   - component: {fileID: 1583895024}
-  - component: {fileID: 1583895023}
+  - component: {fileID: 1583895027}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -1544,21 +1597,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1583895023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1583895021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7bcef3d3c24aeb439ffb8b5f23653f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  readFromTextObject: 0
-  readOnHover: 1
-  outputText: Start Game Button
 --- !u!114 &1583895024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1603,7 +1641,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+      - m_Target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
         m_TargetAssemblyTypeName: ScreenReader, trudeaua.EasyAccessibility.Runtime
         m_MethodName: StaticReadText
         m_Mode: 5
@@ -1653,6 +1691,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583895021}
   m_CullTransparentMesh: 1
+--- !u!114 &1583895027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583895021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readFromTextObject: 0
+  readOnHover: 1
+  outputText: Start Button
 --- !u!1 &1635553601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1735,6 +1788,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1733829080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 634150390957360618, guid: 74420fa2ab356d24cbf75c1ef8a05efb, type: 3}
+  m_PrefabInstance: {fileID: 944165385}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1733829082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733829080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553c187032ead334b84eb581e13a9bcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1910843780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1817,7 @@ GameObject:
   - component: {fileID: 1910843785}
   - component: {fileID: 1910843784}
   - component: {fileID: 1910843783}
-  - component: {fileID: 1910843782}
+  - component: {fileID: 1910843786}
   m_Layer: 5
   m_Name: OptionsButton
   m_TagString: Untagged
@@ -1775,21 +1845,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1910843782
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1910843780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7bcef3d3c24aeb439ffb8b5f23653f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  readFromTextObject: 0
-  readOnHover: 1
-  outputText: Options Game Button
 --- !u!114 &1910843783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1834,7 +1889,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 468183926727367789, guid: a5a4094fa1f9b2f489e2f4459f27acca, type: 3}
+      - m_Target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
         m_TargetAssemblyTypeName: ScreenReader, trudeaua.EasyAccessibility.Runtime
         m_MethodName: StaticReadText
         m_Mode: 5
@@ -1884,6 +1939,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910843780}
   m_CullTransparentMesh: 1
+--- !u!114 &1910843786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1910843780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readFromTextObject: 0
+  readOnHover: 1
+  outputText: Options Button
 --- !u!1 &2106015781
 GameObject:
   m_ObjectHideFlags: 0
