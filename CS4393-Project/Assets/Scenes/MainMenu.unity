@@ -1479,7 +1479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 468183926727367789, guid: 60952c5f2c7b09541b44b278759cf74f, type: 3}
       propertyPath: readableUIObjects.Array.data[0]

@@ -5,19 +5,21 @@ using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class MainMenuController : MonoBehaviour
+public class SearchMenuController : MonoBehaviour
 {
     public ScreenReader ScreenReader;
     [Header("Options Stuff")]
     //public TMP_Dropdown resolutionDropdown;
     public GameObject optionsMenu;
-    public GameObject mainMenu;
-    public Button startButton;
+    public GameObject pauseMenu;
+    public GameObject menu;
     public Button optionsButton;
+    public Button resumeButton;
     public Button confirmButton;
     public Button quitButton;
     public Toggle fullscreenToggle;
     Resolution[] resolutions;
+    public bool pauseActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +29,11 @@ public class MainMenuController : MonoBehaviour
             onResolutionChanged(resolutionDropdown);
         });
         */
-        startButton.onClick.AddListener(startGame);
+        resumeButton.onClick.AddListener(resumeGame);
         optionsButton.onClick.AddListener(toOptions);
-        confirmButton.onClick.AddListener(toMainMenu);
+        confirmButton.onClick.AddListener(toPauseMenu);
         quitButton.onClick.AddListener(Quit);
-        
+
         fullscreenToggle.onValueChanged.AddListener(delegate {
             SetFullScreen();
         });
@@ -67,7 +69,18 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseActive)
+            {
+                resumeGame();
+            }
+            else
+            {
+                toPauseMenu();
+                pauseActive = !pauseActive;
+            }
+        }
     }
     /*
     public void onResolutionChanged(TMP_Dropdown change)
@@ -76,21 +89,26 @@ public class MainMenuController : MonoBehaviour
         PlayerPrefs.SetInt("resolution", resolutionDropdown.value);
     }
     */
-    void startGame()
+
+    void toPauseMenu()
     {
-        SceneManager.LoadScene("SearchMenu");
+        pauseMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        menu.SetActive(false);
     }
 
     void toOptions()
     {
-        mainMenu.SetActive(false);
         optionsMenu.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 
-    void toMainMenu()
+    void resumeGame()
     {
-        mainMenu.SetActive(true);
+        pauseMenu.SetActive(false);
         optionsMenu.SetActive(false);
+        menu.SetActive(true);
+        pauseActive = !pauseActive;
     }
 
     void Quit()
