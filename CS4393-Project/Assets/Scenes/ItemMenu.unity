@@ -406,6 +406,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &443964942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 443964943}
+  - component: {fileID: 443964945}
+  - component: {fileID: 443964944}
+  m_Layer: 0
+  m_Name: ItemDisplayController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &443964943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443964942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.17674924, y: -0.12575787, z: 0.047967423}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &443964944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443964942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a0a79f5e761c6841ba1ccbb74b112c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySingleton: {fileID: 443964945}
+  canvas: {fileID: 1578002679}
+  itemDesc: {fileID: 1097705462}
+  itemName: {fileID: 1213300753}
+  quantity: {fileID: 760252553}
+  rating: {fileID: 1680853371}
+  price: {fileID: 2039758035}
+--- !u!114 &443964945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443964942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2455a0c162bef1d4799cd985e8a0d018, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &506054606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,3 +4834,4 @@ SceneRoots:
   - {fileID: 769734983}
   - {fileID: 1196436669}
   - {fileID: 1748214575}
+  - {fileID: 443964943}
