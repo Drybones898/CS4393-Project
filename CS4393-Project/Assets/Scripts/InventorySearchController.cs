@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEngine.Rendering.DebugUI;
 
 public class InventorySearchController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class InventorySearchController : MonoBehaviour
     public GameObject child;
     public TextMeshProUGUI label;
     public Item item;
+    public RawImage image;
     void Start()
     {
         int i = 0, j = 0;
@@ -25,12 +27,12 @@ public class InventorySearchController : MonoBehaviour
 
             foreach (Transform childTransform2 in child.transform)
             {
-                label = childTransform2.gameObject.GetComponent<TextMeshProUGUI>();
+                if (j != 5)
+                    label = childTransform2.gameObject.GetComponent<TextMeshProUGUI>();
+                else if (j == 5)
+                    image = childTransform2.gameObject.GetComponent<RawImage>(); ;
                 switch(j)
                 {
-                    case 0:
-                    //input image
-                    break;
                     case 1:
                     label.text = item.itemName;
                     //Debug.Log(item.itemName);
@@ -46,7 +48,8 @@ public class InventorySearchController : MonoBehaviour
                     label.text = item.quantity.ToString() + " remaining";
                     break;
                     case 5:
-                    //Input image?
+                    //input image
+                    image.texture = Resources.Load<Texture>("Images/" + item.itemName);
                     break;
                     default:
                     break;

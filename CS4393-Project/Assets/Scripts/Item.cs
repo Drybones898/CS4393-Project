@@ -10,4 +10,5 @@ public class Item
     public int rating;
     public double price; 
     public int amtInCart;
+    public string category;
 }

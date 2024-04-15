@@ -11,6 +11,7 @@ public class PanelActivatorController : MonoBehaviour
     public GameObject child;
     public TextMeshProUGUI label;
     public Item item;
+    public RawImage image;
     
     void Start()
     {
@@ -30,15 +31,15 @@ public class PanelActivatorController : MonoBehaviour
 
             foreach (Transform childTransform2 in child.transform)
             {
-                if(j != 6)
-                    label = childTransform2.gameObject.GetComponent<TextMeshProUGUI>();
-                else if(j == 6)
+                
+                if(j == 6)
                     inputField = childTransform2.gameObject.GetComponent<TMP_InputField>();
+                else if (j == 7)
+                    image = childTransform2.gameObject.GetComponent<RawImage>();
+                else
+                    label = childTransform2.gameObject.GetComponent<TextMeshProUGUI>();
                 switch (j)
                 {
-                    case 0:
-                        //input image
-                        break;
                     case 1:
                         label.text = item.itemName;
                         //Debug.Log(item.itemName);
@@ -55,6 +56,10 @@ public class PanelActivatorController : MonoBehaviour
                         break;
                     case 6:
                         inputField.text = item.amtInCart.ToString();
+                        break;
+                    case 7:
+                        //input image
+                        image.texture = Resources.Load<Texture>("Images/" + item.itemName);
                         break;
                     default:
                         break;

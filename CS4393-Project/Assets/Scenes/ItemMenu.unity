@@ -456,6 +456,7 @@ MonoBehaviour:
   quantity: {fileID: 760252553}
   rating: {fileID: 1680853371}
   price: {fileID: 2039758035}
+  image: {fileID: 1867403684}
 --- !u!1 &506054606
 GameObject:
   m_ObjectHideFlags: 0

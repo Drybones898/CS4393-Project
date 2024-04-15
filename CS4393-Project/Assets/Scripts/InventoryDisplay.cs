@@ -12,6 +12,7 @@ public class InventoryDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI quantity;
     [SerializeField] TextMeshProUGUI rating;
     [SerializeField] TextMeshProUGUI price;
+    [SerializeField] RawImage image;
 
     public static Item item;
 
@@ -24,5 +25,6 @@ public class InventoryDisplay : MonoBehaviour
         quantity.text = item.quantity.ToString() + " remaining";
         rating.text = "Rated " + item.rating.ToString() + " out of 5";
         price.text = "$" + item.price.ToString();
+        image.texture = Resources.Load<Texture>("Images/" + item.itemName);
     }
 }
