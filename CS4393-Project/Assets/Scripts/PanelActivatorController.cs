@@ -61,6 +61,9 @@ public class PanelActivatorController : MonoBehaviour
                         //input image
                         image.texture = Resources.Load<Texture>("Images/" + item.itemName);
                         break;
+                    case 8:
+                        label.text = item.itemName;
+                        break;
                     default:
                         break;
                 }

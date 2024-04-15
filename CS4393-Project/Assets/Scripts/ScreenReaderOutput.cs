@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 
 /// <summary>
 /// A component wrapper around a single string that will contain
@@ -76,7 +77,7 @@ public class ScreenReaderOutput : MonoBehaviour, IPointerEnterHandler
         // If we're reading from a Text object
         if (readFromTextObject) {
             // Attempt to find the attached Text component
-            if(textComponentPresent)
+            if (textComponentPresent)
             {
                 textComponent = textObject;
                 screenReaderPassedText = textObject.text;

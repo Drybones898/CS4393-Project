@@ -30,8 +30,8 @@ public class InventorySearchController : MonoBehaviour
                 if (j != 5)
                     label = childTransform2.gameObject.GetComponent<TextMeshProUGUI>();
                 else if (j == 5)
-                    image = childTransform2.gameObject.GetComponent<RawImage>(); ;
-                switch(j)
+                    image = childTransform2.gameObject.GetComponent<RawImage>();
+                switch (j)
                 {
                     case 1:
                     label.text = item.itemName;
@@ -50,6 +50,10 @@ public class InventorySearchController : MonoBehaviour
                     case 5:
                     //input image
                     image.texture = Resources.Load<Texture>("Images/" + item.itemName);
+                    label.text = item.itemName;
+                    break;
+                    case 6:
+                    label.text = item.itemName;
                     break;
                     default:
                     break;
