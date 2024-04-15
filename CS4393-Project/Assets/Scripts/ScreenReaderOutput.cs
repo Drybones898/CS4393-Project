@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 /// <summary>
 /// A component wrapper around a single string that will contain
@@ -41,7 +42,7 @@ public class ScreenReaderOutput : MonoBehaviour, IPointerEnterHandler
     // The string the ScreenReader class will read
     private string screenReaderPassedText;
 
-    private Text textComponent;
+    private TMP_Text textComponent;
 
     /// <summary>
     /// Add the <see cref="Outline"/> component in Awake so that
@@ -70,7 +71,7 @@ public class ScreenReaderOutput : MonoBehaviour, IPointerEnterHandler
 
     void Start()
     {
-        bool textComponentPresent = this.gameObject.TryGetComponent<Text>(out Text textObject);
+        bool textComponentPresent = this.gameObject.TryGetComponent<TMP_Text>(out TMP_Text textObject);
 
         // If we're reading from a Text object
         if (readFromTextObject) {
