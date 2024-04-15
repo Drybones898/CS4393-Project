@@ -415,7 +415,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 443964943}
-  - component: {fileID: 443964945}
   - component: {fileID: 443964944}
   m_Layer: 0
   m_Name: ItemDisplayController
@@ -451,25 +450,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a0a79f5e761c6841ba1ccbb74b112c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySingleton: {fileID: 443964945}
   canvas: {fileID: 1578002679}
   itemDesc: {fileID: 1097705462}
   itemName: {fileID: 1213300753}
   quantity: {fileID: 760252553}
   rating: {fileID: 1680853371}
   price: {fileID: 2039758035}
---- !u!114 &443964945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443964942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2455a0c162bef1d4799cd985e8a0d018, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &506054606
 GameObject:
   m_ObjectHideFlags: 0
@@ -1522,6 +1508,7 @@ GameObject:
   - component: {fileID: 1015092316}
   - component: {fileID: 1015092315}
   - component: {fileID: 1015092314}
+  - component: {fileID: 1015092318}
   m_Layer: 5
   m_Name: AddToCartButton
   m_TagString: Untagged
@@ -1620,6 +1607,18 @@ MonoBehaviour:
           m_StringArgument: Add to cart button pressed
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1015092318}
+        m_TargetAssemblyTypeName: ItemAddingController, Assembly-CSharp
+        m_MethodName: addToCart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1015092316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1657,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1015092312}
   m_CullTransparentMesh: 1
+--- !u!114 &1015092318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015092312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e062fcb926899294eb780184219d225a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputField: {fileID: 506054609}
+  input: 
+  itemCost: 0
+  itemsAdded: 1
 --- !u!1 &1032562878
 GameObject:
   m_ObjectHideFlags: 0
@@ -3796,6 +3811,7 @@ GameObject:
   - component: {fileID: 1909870058}
   - component: {fileID: 1909870057}
   - component: {fileID: 1909870056}
+  - component: {fileID: 1909870060}
   m_Layer: 5
   m_Name: HomeButton
   m_TagString: Untagged
@@ -3894,6 +3910,18 @@ MonoBehaviour:
           m_StringArgument: Home Button Pressed
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1909870060}
+        m_TargetAssemblyTypeName: HomeButtonController, Assembly-CSharp
+        m_MethodName: viewHome
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1909870058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3932,6 +3960,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909870054}
   m_CullTransparentMesh: 1
+--- !u!114 &1909870060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909870054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 624118aaa9f893b4e880f8a6c468b102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1947765881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3945,6 +3985,7 @@ GameObject:
   - component: {fileID: 1947765884}
   - component: {fileID: 1947765883}
   - component: {fileID: 1947765886}
+  - component: {fileID: 1947765887}
   m_Layer: 5
   m_Name: CartButton
   m_TagString: Untagged
@@ -4028,6 +4069,18 @@ MonoBehaviour:
           m_StringArgument: Cart Button Pressed
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1947765887}
+        m_TargetAssemblyTypeName: ViewCart, Assembly-CSharp
+        m_MethodName: viewCart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1947765884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4081,6 +4134,18 @@ MonoBehaviour:
   readFromTextObject: 0
   readOnHover: 1
   outputText: Cart Button
+--- !u!114 &1947765887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947765881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5626f79af416fd14e819603686f2b93e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1979340885
 GameObject:
   m_ObjectHideFlags: 0

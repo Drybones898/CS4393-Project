@@ -33,10 +33,11 @@ public class InventorySearchController : MonoBehaviour
                     break;
                     case 1:
                     label.text = item.itemName;
-                    Debug.Log(item.itemName);
+                    //Debug.Log(item.itemName);
                     break;
                     case 2:
                     label.text = "Rated " + item.rating.ToString() + " out of 5";
+                    Debug.Log(item.itemName);
                     break;
                     case 3:
                     label.text = "$" + item.price.ToString();

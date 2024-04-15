@@ -6,7 +6,6 @@ using TMPro;
 
 public class InventoryDisplay : MonoBehaviour
 {
-    [SerializeField] InventorySingleton inventorySingleton;
     [SerializeField] GameObject canvas;
     [SerializeField] TextMeshProUGUI itemDesc;
     [SerializeField] TextMeshProUGUI itemName;

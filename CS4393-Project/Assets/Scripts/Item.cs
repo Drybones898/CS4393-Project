@@ -9,4 +9,5 @@ public class Item
     public int quantity;
     public int rating;
     public double price; 
+    public int amtInCart;
 }

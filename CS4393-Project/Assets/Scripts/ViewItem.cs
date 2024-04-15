@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class ViewItem : MonoBehaviour
 {
@@ -9,17 +11,23 @@ public class ViewItem : MonoBehaviour
     search for the object in the array list for the item reference to set to 
     the PlayerStatusSingleton. It's gonna be an expensive operation but it will work. 
     */
-    public TextMeshProUGI objectNameBox;
+    [SerializeField] TextMeshProUGUI objectNameBox;
     public string objectName;
 
-    void Start()
+    void Update()
     {
-        objectNameBox = objectNameBox.text;
+        objectName = objectNameBox.text;
     }
     // Start is called before the first frame update
     public void viewItem()
     {
-        PlayerSingleton.selectedItem = null;
+        foreach(Item item in InventorySingleton.inventory)
+        {
+            if(item.itemName == objectName)
+            {
+                InventorySingleton.setSelectedItem(item);
+            }
+        }
         SceneManager.LoadScene("ItemMenu");
     }
 }
