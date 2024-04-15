@@ -1183,9 +1183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readFromTextObject: 0
+  readFromTextObject: 1
   readOnHover: 1
-  outputText: Item Amount
+  outputText: 
 --- !u!114 &760252553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1761,6 +1761,7 @@ GameObject:
   - component: {fileID: 1097705461}
   - component: {fileID: 1097705463}
   - component: {fileID: 1097705462}
+  - component: {fileID: 1097705464}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1895,6 +1896,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097705460}
   m_CullTransparentMesh: 1
+--- !u!114 &1097705464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097705460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  readFromTextObject: 1
+  readOnHover: 1
+  outputText: 
 --- !u!1 &1190387830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,17 +1987,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190387830}
   m_CullTransparentMesh: 1
---- !u!114 &1192997527 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1158050054624734825, guid: 96714e01b94f22940b700001291fede0, type: 3}
-  m_PrefabInstance: {fileID: 6013306114130701584}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1196436669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,9 +2129,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readFromTextObject: 0
+  readFromTextObject: 1
   readOnHover: 1
-  outputText: Item Name
+  outputText: 
 --- !u!114 &1213300753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2812,9 +2817,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readFromTextObject: 0
+  readFromTextObject: 1
   readOnHover: 1
-  outputText: Item Rating
+  outputText: 
 --- !u!114 &1680853371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3109,7 +3114,7 @@ MonoBehaviour:
   resumeButton: {fileID: 998953716}
   confirmButton: {fileID: 1719061658}
   quitButton: {fileID: 86916479}
-  fullscreenToggle: {fileID: 1192997527}
+  fullscreenToggle: {fileID: 6013306114130701585}
   pauseActive: 0
 --- !u!1 &1755226556
 GameObject:
@@ -4407,9 +4412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc260e34f2441c4588c4bcefd0c5cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readFromTextObject: 0
+  readFromTextObject: 1
   readOnHover: 1
-  outputText: Item Price
+  outputText: 
 --- !u!114 &2039758035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4890,6 +4895,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96714e01b94f22940b700001291fede0, type: 3}
+--- !u!114 &6013306114130701585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9104717654325715798, guid: 96714e01b94f22940b700001291fede0, type: 3}
+  m_PrefabInstance: {fileID: 6013306114130701584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
