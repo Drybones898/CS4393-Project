@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEngine.Rendering.DebugUI;
 using Unity.VisualScripting;
+using JetBrains.Annotations;
+using System.Text.RegularExpressions;
 
 public class InventorySearchController : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class InventorySearchController : MonoBehaviour
     public TextMeshProUGUI label;
     public Item item;
     public RawImage image;
-    public UnityEngine.UI.Button button;
+    public SearchSingleton SearchSingleton;
 
     [Header("Categories")]
     [SerializeField] public Toggle produceToggle;
@@ -27,38 +28,48 @@ public class InventorySearchController : MonoBehaviour
     [SerializeField] public TMP_InputField lowerRange;
     [SerializeField] public TMP_InputField upperRange;
 
+    [Header("Search Bar")]
+    [SerializeField] public TMP_InputField searchField;
+    [SerializeField] public Button searchButton;
+
     [Header("Other")]
     [SerializeField] public Toggle includeUnavailable;
     void Start()
     {
         produceToggle.onValueChanged.AddListener(delegate {
-            updateCategories();
+            renderItems();
         });
         groceriesToggle.onValueChanged.AddListener(delegate {
-            updateCategories();
+            renderItems();
         });
         snacksToggle.onValueChanged.AddListener(delegate {
-            updateCategories();
+            renderItems();
         });
         frozenToggle.onValueChanged.AddListener(delegate {
-            updateCategories();
+            renderItems();
         });
         drinksToggle.onValueChanged.AddListener(delegate {
-            updateCategories();
+            renderItems();
         });
 
         lowerRange.onValueChanged.AddListener(delegate
         {
-            updateRange();
+            renderItems();
         });
         upperRange.onValueChanged.AddListener(delegate
         {
-            updateRange();
+            renderItems();
         });
 
         includeUnavailable.onValueChanged.AddListener(delegate
         {
-            updateUnavailable();
+            renderItems();
+        });
+
+        searchButton.onClick.AddListener(delegate
+        {
+            SearchSingleton.lastSearch = searchField.text;
+            renderItems();
         });
 
         renderItems();
@@ -134,84 +145,61 @@ public class InventorySearchController : MonoBehaviour
         if (item.category == "Produce")
         {
             if (!produceToggle.isOn) {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail produce");
-                return isVisible;
+                return !isVisible;
             }
         } else if (item.category == "Snack")
         {
             if (!snacksToggle.isOn)
             {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail snacks");
-                return isVisible;
+                return !isVisible;
             }
         } else if (item.category == "Groceries")
         {
             if (!groceriesToggle.isOn)
             {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail groceries");
-                return isVisible;
+                return !isVisible;
             }
         } else if (item.category == "Drink")
         {
             if (!drinksToggle.isOn)
             {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail drinks");
-                return isVisible;
+                return !isVisible;
             }
         } else if (item.category == "Frozen")
         {
             if (!frozenToggle.isOn)
             {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail frozen");
-                return isVisible;
+                return !isVisible;
             }
         }
 
         if (item.price > int.Parse(upperRange.text))
         {
-            isVisible = false;
-            Debug.Log(item.itemName + " fail upper");
-            return isVisible;
+            return !isVisible;
         }
 
         if (item.price < int.Parse(lowerRange.text))
         {
-            isVisible = false;
-            Debug.Log(item.itemName + " fail lower");
-            return isVisible;
+            return !isVisible;
         }
 
         if (item.quantity == 0)
         {
             if (!includeUnavailable.isOn)
             {
-                isVisible = false;
-                Debug.Log(item.itemName + " fail unavailable");
-                return isVisible;
+                return !isVisible;
             }
         }
 
-        return isVisible;
-    }
+        var regExp = new Regex(SearchSingleton.lastSearch.ToLower());
 
-    void updateCategories()
-    {
-        renderItems();
-        Debug.Log("Update Categories");
-    }
-    void updateRange()
-    {
-        renderItems();
-        Debug.Log("Update Range");
-    }
-    void updateUnavailable()
-    {
-        renderItems();
-        Debug.Log("Update Unavailable");
+        if (!regExp.Match(item.itemName.ToLower()).Success)
+        {
+            return !isVisible;
+        }
+        Debug.Log(item.itemName);
+        Debug.Log(SearchSingleton.lastSearch);
+
+        return isVisible;
     }
 }
