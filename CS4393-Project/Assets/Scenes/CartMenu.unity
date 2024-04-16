@@ -13932,7 +13932,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 429002120}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.06
+  m_Size: 0.059999995
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -40291,6 +40291,7 @@ GameObject:
   - component: {fileID: 876983253}
   - component: {fileID: 876983252}
   - component: {fileID: 876983251}
+  - component: {fileID: 876983255}
   m_Layer: 5
   m_Name: CheckoutButton
   m_TagString: Untagged
@@ -40389,6 +40390,18 @@ MonoBehaviour:
           m_StringArgument: Checkout Button Pressed
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 876983255}
+        m_TargetAssemblyTypeName: CheckoutController, Assembly-CSharp
+        m_MethodName: Checkout
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &876983253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40427,6 +40440,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876983249}
   m_CullTransparentMesh: 1
+--- !u!114 &876983255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876983249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b649a03a21726b94cbbb74cc562dcad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878074193
 GameObject:
   m_ObjectHideFlags: 0
