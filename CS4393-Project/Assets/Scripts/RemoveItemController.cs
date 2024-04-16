@@ -13,6 +13,7 @@ public class RemoveItemController : MonoBehaviour
     public int itemsRemoved = 1;
     public string objectName;
     [SerializeField] TextMeshProUGUI objectNameBox;
+    [SerializeField] TextMeshProUGUI totalPriceBox;
     [SerializeField] GameObject itemPanel;
     [SerializeField] TMP_InputField amountField;
 
@@ -83,6 +84,8 @@ public class RemoveItemController : MonoBehaviour
             InventorySingleton.selectedItem.quantity += InventorySingleton.selectedItem.amtInCart - int.Parse(amountField.text);
             InventorySingleton.selectedItem.amtInCart = int.Parse(amountField.text);
         }
+
+        totalPriceBox.text = "Total Price: $" + (amount * InventorySingleton.selectedItem.price).ToString();
     }
 
     /*
