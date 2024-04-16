@@ -13,7 +13,7 @@ public class PanelActivatorController : MonoBehaviour
     public Item item;
     public RawImage image;
     
-    void Update()
+    void Start()
     {
         int i = 0, j = 0;
 
