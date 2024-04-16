@@ -7,7 +7,7 @@ public class Item
     public string itemName;
     public string itemDesc;
     public int quantity;
-    public int rating;
+    public double rating;
     public double price; 
     public int amtInCart;
     public string category;
