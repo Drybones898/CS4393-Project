@@ -72,6 +72,12 @@ public class InventorySearchController : MonoBehaviour
             renderItems();
         });
 
+        if (SearchSingleton.lastSearch != "")
+        {
+            searchField.text = SearchSingleton.lastSearch;
+        }
+        
+
         renderItems();
     }
     void renderItems()
