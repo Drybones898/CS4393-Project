@@ -18,7 +18,7 @@ public class InventoryDisplay : MonoBehaviour
     public static Item item;
 
 
-    void Start()
+    void Update()
     {
         item = InventorySingleton.selectedItem;
         itemDesc.text = item.itemDesc;

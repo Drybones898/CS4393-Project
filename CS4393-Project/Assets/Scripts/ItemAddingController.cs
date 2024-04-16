@@ -23,12 +23,30 @@ public class ItemAddingController : MonoBehaviour
         }
         Debug.Log(InventorySingleton.selectedItem.itemName);
         itemCost = InventorySingleton.selectedItem.price;
+            while (InventorySingleton.selectedItem.quantity - itemsAdded < 0)
+            {
+                itemsAdded = itemsAdded - 1;
+            }
+
         InventorySingleton.selectedItem.quantity -= itemsAdded;
         InventorySingleton.selectedItem.amtInCart += itemsAdded;
-        PlayerSingleton.inventory.Add(InventorySingleton.selectedItem);
-        PlayerSingleton.cartTotal += itemCost * itemsAdded;
-        PlayerSingleton.totalItems += itemsAdded;
+        int i = 0;
+        foreach (Item item in PlayerSingleton.inventory)
+        {
+            if (InventorySingleton.selectedItem.itemName == item.itemName)
+            {
+                PlayerSingleton.cartTotal += itemCost * itemsAdded;
+                PlayerSingleton.totalItems += itemsAdded;
+                i++;
+            }
+        }
 
-
+        if (i == 0)
+        {
+            PlayerSingleton.inventory.Add(InventorySingleton.selectedItem);
+            PlayerSingleton.cartTotal += itemCost * itemsAdded;
+            PlayerSingleton.totalItems += itemsAdded;
+        }
+        i = 0;
     }
 }
